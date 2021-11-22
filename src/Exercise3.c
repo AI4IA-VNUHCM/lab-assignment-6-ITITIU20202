@@ -33,12 +33,13 @@ void Ex3(char *str){
                 }
                 count1=0;
             }
+    }
             int k=0;
             for (int i =index1; i<index1+min;i++) {
                     t1[k++]=str[i];
                 }
                 t1[k]='\0';
-             }
+             
     
     for (int i = 0 ; i < strlen(str); i++) {
         
@@ -52,7 +53,7 @@ void Ex3(char *str){
                 }
                 count=0;
             }
-            
+    }
             if (count > max ) {
                 max = count;
                 index = strlen(str)-max;
@@ -63,7 +64,7 @@ void Ex3(char *str){
                     t[j++]=str[i];
                 }
                 t[j]='\0';
-             }
+             
     printf("Shortest word: %s\n",t1);
     printf("Longest word: %s",t);
 }
