@@ -16,6 +16,20 @@ Ex:
 void Ex4(char *str){
 	//Your codes here
 	
+	int size =strlen(str);
+
+	for (int i =0;i<size;i++) {
+
+        if (str[i]==' ') { 
+            if (str[i+1]==' ' || i==0 || i==size-1) {
+                for (int j=i;j<size;j++)
+                str[j]=str[j+1];
+				i--;
+				size--;
+			}
+		}
+	}
+	printf("%s",str);
 }
 
 int main(int argc, char *argv[]) {
