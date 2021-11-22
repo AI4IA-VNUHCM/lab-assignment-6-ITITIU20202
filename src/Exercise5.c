@@ -30,9 +30,11 @@ void Ex5(char *str){
 		
 
 			case 4: 
-				if (str[0]=='{' && str[3]=='}' && str[1]=='[' && str[2]==']') { 
+				if (str[0]=='{' && str[3]=='}' && (str[1]=='[' && str[2]==']') || (str[1]=='(' && str[2]==')')) { 
 					printf ("Valid!");
-				} else printf("Invalid");
+				} else if (str[0]=='[' && str[3]==']' && (str[1]=='(' && str[2]==')') ) {
+					printf("Valid!");
+				} else printf("Invalid!");
 				break;
 
 			case 2:
