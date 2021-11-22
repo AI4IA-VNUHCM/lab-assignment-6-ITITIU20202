@@ -17,6 +17,20 @@ Ex:
 
 void Ex5(char *str){
 	//Your codes here
+	int size = strlen(str);
+	int check;
+	
+    for (int i =0; i<strlen(str)/2; i++) {
+        if ((str[i]=='{' && str[size-i-1]=='}') || (str[i]=='(' && str[size-i-1]==')') || (str[i]=='[' && str[size-i-1]==']')) 
+			{
+			 check++;
+			} else {
+				printf("Invalid!"); 
+				break; 
+			}
+    }
+
+	if (check==size/2) printf("Valid!");
 	
 }
 
