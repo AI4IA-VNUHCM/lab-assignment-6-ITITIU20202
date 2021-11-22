@@ -15,50 +15,50 @@ Ex:
 
 void Ex3(char *str){
 	//Your codes here
-	int max = 0,min=strlen(str);
-	int count =0;
-	int start=0;
-	char temp[100],temp1[100];
-	for(int i =0;i<strlen(str);i++) {
-	    
-			if (str[i]==' ') {
-				if (count > max) {
-
-					max = count;
-					for (int t =0; t <max;t++) {
-						temp[t]=str[start++];
-					}
-					temp[max] ='\0';
-				}
-				count =0;
-				start = i+1;
-				continue;
-			}
-			count++;
-		}
-	printf("Longest word: %s\n",temp);
-
-	for(int i =0;i<strlen(str);i++) {
-	    
-			if (str[i]==' ') {
-				if (count < min) {
-
-					min = count;
-					for (int t =0; t <count;t++) {
-						temp1[t]=str[start++];
-					}
-					temp1[count] ='\0';
-				}
-				count =0;
-				start = i+1;
-				continue;
-			}
-			count++;
-		}
-	printf("Shortest word: %s",temp1);
-
-
-
+	int max=0,count=0,index;
+    char t[100];
+    int min=100,count1=0,index1;
+    char t1[100];
+    
+    for (int i = 0 ; i < strlen(str); i++) {
+        
+        if (str[i]!=' ') {
+            count1++;
+        }
+            else {
+            if (count1 < min) {
+                min=count1;
+                index1=i-min;
+                }
+                count1=0;
+            }
+            int k=0;
+            for (int i =index1; i<index1+min;i++) {
+                    t1[k++]=str[i];
+                }
+                t1[k]='\0';
+             }
+    
+    for (int i = 0 ; i < strlen(str); i++) {
+        
+        if (str[i]!=' ') {
+            count++;
+        }
+            else {
+            if (count > max) {
+                max=count;
+                index=i-max;
+                }
+                count=0;
+            }
+            int j=0;
+            for (int i =index; i<index+max;i++) {
+                    t[j++]=str[i];
+                }
+                t[j]='\0';
+             }
+    printf("Shortest word: %s\n",t1);
+    printf("Longest word: %s",t);
 }
 
 int main(int argc, char *argv[]) {
