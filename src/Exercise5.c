@@ -18,32 +18,19 @@ Ex:
 void Ex5(char *str){
 	//Your codes here
 	int size = strlen(str);
+	int check;
 	if (size%2!=0) printf("Invalid!");
 	else {
-		switch (size) {
-
-			case 6:
-			if (str[0]=='{' && str[5]=='}' && str[1]=='[' && str[4]==']' && str[2]=='(' && str[3]== ')') {
-				printf("Valid!");
-				} else printf("Invalid!");
-				break;
-		
-
-			case 4: 
-				if (str[0]=='{' && str[3]=='}' && (str[1]=='[' && str[2]==']') || (str[1]=='(' && str[2]==')')) { 
-					printf ("Valid!");
-				} else if (str[0]=='[' && str[3]==']' && (str[1]=='(' && str[2]==')') ) {
-					printf("Valid!");
-				} else printf("Invalid!");
-				break;
-
-			case 2:
-				if ((str[0]=='{' && str[1]=='}') || (str[0]=='[' && str[1]==']') || (str[0]=='(' && str[1]==')')) {
-					printf("Valid!"); 
-					} else printf("Invalid!");
-				break;
-			
-	}
+    for (int i =0; i<strlen(str)/2; i++) {
+        if ((str[i]=='{' && str[size-i-1]=='}') || (str[i]=='(' && str[size-i-1]==')') || (str[i]=='[' && str[size-i-1]==']')) 
+			{
+			 check=1;
+			} else {
+				printf("Invalid!"); 
+				break; 
+			}
+    }
+	if (check==1) printf("Valid!");
 	}
 }
 
