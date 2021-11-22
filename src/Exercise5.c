@@ -29,7 +29,7 @@ void Ex5(char *str){
 				break; 
 			}
     }
-	printf("%d",check);
+
 	if (check==size/2) printf("Valid!");
 	
 }
