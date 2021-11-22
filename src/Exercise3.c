@@ -17,6 +17,7 @@ void Ex3(char *str){
 	//Your codes here
 	int max=0,count=0,index;
     char t[100];
+    
     int min=100,count1=0,index1;
     char t1[100];
     
@@ -51,7 +52,12 @@ void Ex3(char *str){
                 }
                 count=0;
             }
-			
+            
+            if (count > max ) {
+                max = count;
+                index = strlen(str)-max;
+            }
+            
             int j=0;
             for (int i =index; i<index+max;i++) {
                     t[j++]=str[i];
