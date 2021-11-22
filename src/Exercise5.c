@@ -18,7 +18,6 @@ Ex:
 void Ex5(char *str){
 	//Your codes here
 	int size = strlen(str);
-	printf("size la: %d\n", size);
 	if (size%2!=0) printf("Invalid!");
 	else {
 		switch (size) {
